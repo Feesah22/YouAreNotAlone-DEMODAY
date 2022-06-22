@@ -1,0 +1,52 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>21 Savage Fan Site</title>
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
+    <link rel="stylesheet" href="loginStyle.css">
+</head>
+
+        <div class="titleLogin">
+            <h1><span class=""></span>Welcome Back Friend</h1>
+            <p>It's such a pleassure to see you again. Remember VENT , and do not think about. We are a community , and its all ANONYMOUS therefore you will not be judged. You ready to release stress</p>
+        </div>
+
+        <% if (message.length> 0) { %>
+            <div class="alert alert-danger"> <%= message %></div>
+           <% } %>
+
+
+        <div id="login">
+            <!-- LOGIN FORM -->
+            <form action="/login" method="post">
+                <h1>Sign In</h1>
+                <input type="text"  name="email" placeholder="Username">
+                <input type="password" placeholder="Password" name="password">
+                <button type="submit">Sign in</button>
+            </form>
+            <hr>
+            
+            <p>Need an account? <a href="/signup">Signup</a></p>
+            <p>Or go <a href="/">home</a>.</p>
+
+        
+
+        <!-- <div id="login">
+            <form action="/login" method="post">
+                <h1>Sign In</h1>
+        </div>
+        <input type="text" class="form-control" name="email" placeholder="Username">
+        <input type="password" placeholder="Password">
+        <button type="submit" class="btn btn-warning btn-lg">Sign in</button>
+        </form>
+
+        <hr>
+
+        <p>Need an account? <a href="/signup">Signup</a></p>
+        <p>Or go <a href="/">home</a>.</p> -->
+
+        </div>
+    
+    </html>

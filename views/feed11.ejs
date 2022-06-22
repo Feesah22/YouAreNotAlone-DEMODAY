@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Vent</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Karma">
+    <style>
+        body,
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-family: "Karma", sans-serif
+        }
+
+        .w3-bar-block .w3-bar-item {
+            padding: 20px
+        }
+    </style>
+</head>
+
+<body>
+
+
+
+    <!-- Top menu -->
+    <div class="w3-top">
+        <div class="w3-white w3-xlarge" style="max-width:1200px;margin:auto">
+
+            <div class="w3-right w3-padding-16"><a href="/logout" class="btn btn-default btn-sm">Logout</a></div>
+            <div class="w3-left"><a href="/profile">Profile</a></div>
+            <div class="w3-center w3-padding-16">Vents</div>
+        </div>
+    </div>
+
+    <!-- !PAGE CONTENT! -->
+    <div class="w3-main w3-content w3-padding" style="max-width:1200px;margin-top:100px">
+
+        <!-- First Photo Grid-->
+        <div class="w3-row-padding w3-padding-16 w3-center" id="food">
+            <% for(var i=0; i<feelings.length; i++) {%>
+                <div class="w3-quarter">
+
+                    <a class="ID" href="/post/<%= feelings[i]._id %>">
+                        <h4>
+                            <%= feelings[i].imagecaption %>
+                        </h4>
+                        <!-- <a href="/page/<%= feelings[i].postedBy %>"><%= feelings[i].postedBy %> </a> -->
+                    </a>
+                    <img src="../<%= feelings[i].image %>" style="width:100%">
+
+                    <section>
+                        <h6>
+                            <%= feelings[i].mood %>
+                                <h6>
+                                    <span>
+                                        <%= feelings[i].hearts %>
+                                    </span>
+                                    <p>
+                                        <%= feelings[i].vent %>
+                                    </p>
+
+                    </section>
+                    <span> <i class="fa-solid fa-heart" data-id=<%=feelings[i]._id %>></i></span>
+                    <span> <i class="fa-solid fa-comments" data-id=<%=feelings[i]._id %>></i></span>
+
+                    <% if (feelings[i].comments.length> 0) { %>
+                        <ul>
+                            <% for (let j=0; j<feelings[i].comments.length; j++) { %>
+                                <li>
+                                    <%= feelings[i].comments[j] %>
+                                </li>
+                                <% } %>
+                        </ul>
+                        <% } %>
+
+                            </li>
+                            <% } %>
+                                </ul>
+
+                </div>
+                <div class="w3-quarter">
+                <img src="/w3images/steak.jpg" alt="Steak" style="width:100%">
+                <h3>Let Me Tell You About This Steak</h3>
+                <p>Once again, some random text to lorem lorem lorem lorem ipsum text praesent tincidunt ipsum lipsum.
+                </p>
+            </div>
+            <div class="w3-quarter">
+                <img src="/w3images/cherries.jpg" alt="Cherries" style="width:100%">
+                <h3>Cherries, interrupted</h3>
+                <p>Lorem ipsum text praesent tincidunt ipsum lipsum.</p>
+                <p>What else?</p>
+            </div>
+            <div class="w3-quarter">
+                <img src="/w3images/wine.jpg" alt="Pasta and Wine" style="width:100%">
+                <h3>Once Again, Robust Wine and Vegetable Pasta</h3>
+                <p>Lorem ipsum text praesent tincidunt ipsum lipsum.</p>
+            </div>
+        </div>
+
+                <!-- Second Photo Grid-->
+                <!-- <div class="w3-row-padding w3-padding-16 w3-center">
+            <div class="w3-quarter">
+                <img src="/w3images/popsicle.jpg" alt="Popsicle" style="width:100%">
+                <h3>All I Need Is a Popsicle</h3>
+                <p>Lorem ipsum text praesent tincidunt ipsum lipsum.</p>
+            </div>
+            <div class="w3-quarter">
+                <img src="/w3images/salmon.jpg" alt="Salmon" style="width:100%">
+                <h3>Salmon For Your Skin</h3>
+                <p>Once again, some random text to lorem lorem lorem lorem ipsum text praesent tincidunt ipsum lipsum.
+                </p>
+            </div>
+            <div class="w3-quarter">
+                <img src="/w3images/sandwich.jpg" alt="Sandwich" style="width:100%">
+                <h3>The Perfect Sandwich, A Real Classic</h3>
+                <p>Just some random text, lorem ipsum text praesent tincidunt ipsum lipsum.</p>
+            </div>
+            <div class="w3-quarter">
+                <img src="/w3images/croissant.jpg" alt="Croissant" style="width:100%">
+                <h3>Le French</h3>
+                <p>Lorem lorem lorem lorem ipsum text praesent tincidunt ipsum lipsum.</p>
+            </div>
+        </div> -->
+
+
+
+        </div>
+
+
+
+        <!-- End page content -->
+    </div>
+
+    
+
+    <script src="https://kit.fontawesome.com/f11f67527e.js" crossorigin="anonymous"></script>
+
+    <script src="main.js"></script>
+
+
+
+</body>
+
+</html>

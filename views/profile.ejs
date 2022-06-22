@@ -1,0 +1,92 @@
+<!doctype html>
+<html>
+
+<head>
+  <title>Demo Day</title>
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="profileBody">
+
+    <div class="text-center">
+      <a href="/feed">feed</a>
+      <a href="/logout" class="btn btn-default btn-sm">Logout</a>
+      <h3 class="profileTitle"> Input anyhing that come to your mind !! </h3>
+      
+    </div>
+
+    <div class="profileForm" >
+      
+      <% if (user.local.email) { %>
+        <form action="/addVent" enctype="multipart/form-data"  method="POST">
+
+         <span class="saying"> I am feeling:   <input type="text" class= "howFeel" placeholder="How you feeling?" name="feeling"> </span>
+         <span class="saying"> I feel: <input type="text" class= "ventFeel" placeholder="Vent!!!" name="ventText"> </span>
+         <span class="saying">The way my image explain me is by: <input type="text"  class= "captionFeel" placeholder="image caption" name="imagecaption"> </span>
+          <span class="saying"> <input type="file" name="imageUpload" required> </span>
+          <button class="saying" type="submit">Submit</button>
+        </form>
+        <% } %>
+    </div>
+   
+
+
+
+      <div class="">
+        <h3 >INNER THOUGHTS</h3>
+        <ul class="messages">
+          <% for(var i=0; i<feelings.length; i++) {%>
+            <li class="message1">
+              <section class="profileSection">
+              <a href='/post/<%=feelings[i]._id %>'>
+                <h4>
+                  <%= feelings[i].imagecaption %>
+                </h4>
+                
+              <img class= "feelingImg" src="../<%= feelings[i].image %>" alt="">
+              </a>
+              <span>
+                <%= feelings[i].hearts %>
+              </span>
+              <span><i class="fa fa-ban" aria-hidden="true" data-id=<%=feelings[i]._id %>></i></span>
+              </a>
+              </section>
+              <section class="profileSection profileText1 text-black ">
+                <%= feelings[i].mood %>
+              </span>
+              <br>
+              <span class="text-danger font-weight-bolder">
+                <%= feelings[i].vent %>
+              </span>
+             
+             
+              
+              <% if (feelings[i].comments.length> 0) { %>
+                <ul class="commentUl">
+                  <% for (let j=0; j<feelings[i].comments.length; j++) { %>
+                    <li>
+                      <%= feelings[i].comments[j] %>
+
+                    </li>
+                    <% } %>
+
+                </ul>
+                <% } %>
+
+            </li>
+            <% } %>
+        </ul>
+
+      </section>
+      </div>
+
+
+      <script src="https://kit.fontawesome.com/f11f67527e.js" crossorigin="anonymous"></script>
+
+      <script src="main.js"></script>
+
+</body>
+
+</html>

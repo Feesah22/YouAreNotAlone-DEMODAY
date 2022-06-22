@@ -1,0 +1,71 @@
+<!doctype html>
+<html style="width:100%;    background-color: rgba(234, 194, 137, 0.855)">
+<head>
+    <title>Venting Post</title>
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
+    <!-- <link rel="stylesheet" href="style.css"> -->
+</head>
+<body style="width:100%; background-color:rgb(225, 225, 225); margin-top: 110px; font-size: 2em;">
+<div class="container">
+
+    <div class="page-header text-center" >
+        <a href="/profile">Profile</a>
+        <a href="/feed">Feed</a>
+        <a href="/logout" class="btn btn-default btn-sm">Logout</a>
+    </div>
+
+    <div class="row text-center" >
+
+       
+        <div class="col-sm-6" style="width:100%">
+          <h3>Posts</h3>
+          <ul class="messages">
+          <% for(var i=0; i<feelings.length; i++) {%>
+            <li class="message">
+              <span>
+                <%= feelings[i].hearts %>
+              </span>
+              <h4 class="">
+                <%= feelings[i].mood %>
+              </h4>
+              <p class="text-danger text-uppercase font-weight-bolder">
+                <%= feelings[i].vent %>
+              </p>
+              <p>
+                <%= feelings[i].imagecaption %>
+              </p>
+              <!-- <a href="/page/<%= feelings[i].postedBy %>"><%= feelings[i].postedBy %> </a> -->
+              </a>
+              <div>
+                
+              <!-- <p> <%= feelings[i]._id %> </p> -->
+              <img style="width:100%" class="feelingImg" src="../<%= feelings[i].image %>" alt="">
+              <h3>Comments</h3>
+            <% if (feelings[i].comments.length> 0) { %>
+              <ul ">
+                <% for (let j=0; j<feelings[i].comments.length; j++) { %>
+                  <li  style="color:grey;font-weight:light;font-style: italic; font-size: .75em; text-transform: uppercase; " class="comments">
+                    <%= feelings[i].comments[j] %>
+            
+                  </li>
+                  <% } %>
+            
+              </ul>
+              <% } %>
+            
+                </li>
+                <% } %>
+                  </ul>
+
+
+</div>
+
+          <!---Comments------->
+          
+
+          
+<!-- <script src="main.js"></script> -->
+
+</body>
+</html>

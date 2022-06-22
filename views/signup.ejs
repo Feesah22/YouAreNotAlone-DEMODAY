@@ -1,0 +1,39 @@
+<!doctype html>
+<html>
+<head>
+    <title>Venting SignUp</title>
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
+    <link rel="stylesheet" href="loginStyle.css">
+</head>
+
+    <div class="titleLogin">
+        <h1><span class=""></span>Welcome Friend</h1>
+        <p>It's so nice to see you join us. "You are not alone" is a ANONYMOUS app that allow you to speak your mind , and vent your emotions with no judgement. Remember VENT , and do not think about. We are a community. You ready to release stress</p>
+    </div>
+
+    <% if (message.length> 0) { %>
+        <div class="alert alert-danger">
+            <%= message %>
+        </div>
+        <% } %>
+
+
+            <div id="login">
+                <!-- LOGIN FORM -->
+                <form action="/signup" method="post">
+                    <h1>Sign Up</h1>
+                    <input type="text" name="email" placeholder="Username">
+                    <input type="password" placeholder="Password" name="password">
+                    <button type="submit">Create</button>
+                </form>
+                <hr>
+
+                <p>Already have an account? <a href="/login">Login</a></p>
+                <p>Or go <a href="/">home</a>.</p>
+
+
+
+
+            </div>
+    </html>

@@ -1,0 +1,82 @@
+<!doctype html>
+<html>
+
+<head>
+  <title>Demo Day</title>
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+
+  <div class="text-center">
+    <h1>ANONYMOUS Vent Feed</h1>
+    <h4> Remember to let others know they are not alone !! </h4>
+    
+    <a href="/profile">Profile</a>
+    <a href="/logout" class="btn btn-default btn-sm">Logout</a>
+  </div>
+
+       <div class="col" >
+        <ul class="messages">
+          <% for(var i=0; i<feelings.length; i++) {%>
+            <li class="decorLi">
+              <a class="ID" href="/post/<%= feelings[i]._id %>">
+
+               
+
+                <h4 class="">
+                  <%= feelings[i].mood %>
+                </h4>
+                <p class="text-danger class text-uppercase font-weight-bolder">
+                  <%= feelings[i].vent %>
+                </p>
+                
+                <!-- <a href="/page/<%= feelings[i].postedBy %>"><%= feelings[i].postedBy %> </a> -->
+              </a>
+              <div>
+                <span>
+                  <%= feelings[i].hearts %>
+                </span>
+                <span class=""> <i class="fa-solid fa-heart" data-id=<%=feelings[i]._id %>></i></span>
+              
+                <span> <i class="fa-solid fa-comments" data-id=<%=feelings[i]._id %>></i></span>
+              </div>
+              <img class="feelingImg" src="../<%= feelings[i].image %>" alt="">
+              
+              <!-- <h4 >
+                <%= feelings[i].imagecaption %>
+              </h4> -->
+              
+             
+              
+
+              <% if (feelings[i].comments.length> 0) { %>
+                <ul class="comments">
+                  <% for (let j=0; j<feelings[i].comments.length; j++) { %>
+                    <li class="comments">
+                      <%= feelings[i].comments[j] %>
+
+                    </li>
+                    <% } %>
+
+                </ul>
+                <% } %>
+
+            </li>
+            <% } %>
+        </ul>
+
+
+      </div>
+   
+  
+  <script src="https://kit.fontawesome.com/f11f67527e.js" crossorigin="anonymous"></script>
+
+  <script src="main.js"></script>
+
+</body>
+
+</html>
