@@ -359,7 +359,7 @@ h4 {
   }
 
   h1 {
-    font-size: 70px;
+    font-size: 40px;
   }
 
   .testimony-main {
@@ -376,20 +376,21 @@ h4 {
     background-position: center;
   }
 
+    
   .hero-text {
     height: 600px;
   }
 
   h1 {
-    font-size: 60px;
+    font-size: 30px;
   }
 
-  .about {
+  /* .about {
     overflow: hidden;
-  }
+  } */
 
   .about-text {
-    background-color: rgba(4, 7, 32, .5);
+    background-color: rgb(212, 212, 212);
 
   }
 
@@ -419,6 +420,7 @@ h4 {
 
   .hero-text {
     height: 500px;
+    font-size: 30px;
   }
 
   h1 {
@@ -427,8 +429,18 @@ h4 {
 
   .about-text {
     background-color: rgba(4, 7, 32, .3);
-
+    padding-top: 0%;
+    
   }
+
+  .about-text-p {
+  font-size: 11px;
+  color: white;
+  }
+
+ 
+
+  
 
   .title {
     font-size: 30px;
