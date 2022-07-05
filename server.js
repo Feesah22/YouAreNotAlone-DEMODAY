@@ -4,6 +4,12 @@
 // get all the tools we need
 var express = require('express');
 var app = express();
+// const multerMid = multer({
+//   // storage: multer.memoryStorage(),
+//   limits: {
+//     fileSize: 5 * 1024 * 1024,
+//   },
+// })
 var port = process.env.PORT || 8381;
 const MongoClient = require('mongodb').MongoClient
 var mongoose = require('mongoose');
@@ -34,6 +40,8 @@ mongoose.connect(configDB.url, (err, database) => {
 require('./config/passport')(passport); // pass passport for configuration
 
 // set up our express application
+app.disable('x-powered-by')  //image cloud 
+// app.use(multerMid.single('file')) //image cloud
 app.use(morgan('dev')); // log every request to the console
 app.use(cookieParser()); // read cookies (needed for auth)
 app.use(bodyParser.json()); // get information from html forms

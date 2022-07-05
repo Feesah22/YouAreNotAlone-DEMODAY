@@ -1,14 +1,15 @@
 {
-  "name": "node-authentication",
+  "name": "authentication",
   "main": "server.js",
   "dependencies": {
+    "@google-cloud/storage": "^6.2.2",
     "bcrypt": "*",
     "bcrypt-nodejs": "^0.0.3",
-    "body-parser": "^1.18.3",
+    "body-parser": "^1.20.0",
     "connect-flash": "~0.1.1",
     "cookie-parser": "~1.4.3",
     "ejs": "^3.1.8",
-    "express": "^4.16.4",
+    "express": "^4.18.1",
     "express-session": "^1.15.6",
     "lodash": "^4.17.20",
     "method-override": "~2.3.6",
@@ -22,5 +23,21 @@
     "passport-google-oauth": "~1.0.0",
     "passport-local": "~1.0.0",
     "passport-twitter": "^0.1.5"
-  }
+  },
+  "scripts": {
+    "start": "node server.js"
+  },
+  "description": "DEMO DAY VENTING PROJECT",
+  "version": "1.0.0",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Feesah22/YouAreNotAlone-DEMODAY.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Feesah22/YouAreNotAlone-DEMODAY/issues"
+  },
+  "homepage": "https://github.com/Feesah22/YouAreNotAlone-DEMODAY#readme"
 }

@@ -1,7 +1,20 @@
 module.exports = function (app, passport, db, multer, ObjectId) {
 
  // Image Upload Code =========================================================================
-var storage = multer.diskStorage({
+  // const Cloud = require('@google-cloud/storage')
+  // const path = require('path')
+  // const serviceKey = path.join(__dirname, './keys.json')
+
+  // const { Storage } = Cloud
+  // const storage = new Storage({
+  //   keyFilename: serviceKey,
+  //   projectId: 'aerial-citron-355319-0e8eb02498fb.json',
+  // })
+
+  // module.exports = storage
+
+
+ var storage = multer.diskStorage({
   destination: (req, file, cb) => {
     cb(null, 'public/images/uploads')
   },
@@ -83,6 +96,9 @@ app.get('/page/:id', isLoggedIn, function (req, res) {
 
 // message board routes ===============================================================
 // add multer middleware image upload to this file 
+
+  // app.post('/uploads', (req, res, next) => {
+  // })
   app.post('/addVent', isLoggedIn, upload.single('imageUpload'), (req, res) => {
     console.log("addVent" , req.file)
     // let image = "default.jpeg" //typeof return a string 

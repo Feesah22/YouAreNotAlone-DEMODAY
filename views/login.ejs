@@ -8,10 +8,7 @@
     <link rel="stylesheet" href="loginStyle.css">
 </head>
 
-        <div class="titleLogin">
-            <h1><span class=""></span>Welcome Back Friend</h1>
-            <p>It's such a pleassure to see you again. Remember VENT , and do not think about. We are a community , and its all ANONYMOUS therefore you will not be judged. You ready to release stress</p>
-        </div>
+        
 
         <% if (message.length> 0) { %>
             <div class="alert alert-danger"> <%= message %></div>
@@ -19,8 +16,12 @@
 
 
         <div id="login">
+            <h1>Welcome Back Friend</h1>
+            <p>It's such a pleassure to see you again. Remember its ok to speak your mind. We want to hear you out</p>
+            
             <!-- LOGIN FORM -->
             <form action="/login" method="post">
+                
                 <h1>Sign In</h1>
                 <input type="text"  name="email" placeholder="Username">
                 <input type="password" placeholder="Password" name="password">

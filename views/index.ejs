@@ -1,204 +1,260 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
+    <title>W3.CSS Template</title>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="style.css">
-    <title>You are not alone</title>
+    <style>
+        body,
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-family: "Raleway", sans-serif
+        }
+
+        body,
+        html {
+            height: 100%;
+            line-height: 1.8;
+        }
+
+        /* Full height image header */
+        .bgimg-1 {
+            background-position: center;
+            background-size: cover;
+            background-image: url("img/Divers.png");
+            min-height: 100%;
+        }
+
+        .w3-bar .w3-button {
+            padding: 16px;
+        }
+    </style>
 </head>
 
 <body>
-    <div>
-        <!-- Navbar -->
-        <div class="w3-top w3-text-white w3-black">
-            <div class="w3-bar  ">
-                <a class="w3-bar-item w3-button w3-padding-large w3-hide-medium w3-hide-large w3-right"
-                    href="javascript:void(0)" onclick="myFunction()" title="Toggle Navigation Menu"><i
-                        class="fa fa-bars"></i></a>
-                <a href="#home" class="w3-bar-item w3-button w3-padding-large">HOME</a>
-                <a href="#about" class="w3-bar-item w3-button w3-padding-large w3-hide-small">ABOUT</a>
-                <a href="#testimony" class="w3-bar-item w3-button w3-padding-large w3-hide-small">FACTS</a>
-                <a href="#contact" class="w3-bar-item w3-button w3-padding-large w3-hide-small">CONTACT</a>
-                <a href="/login"
-                    class="btn btn-default w3-bar-item w3-button w3-padding-large w3-hide-small w3-text-red w3-text-bold"><span
-                        class=""></span>Login</a>
-                <a href="/signup"
-                    class="btn btn-default w3-bar-item w3-button w3-padding-large w3-hide-small w3-text-red"><span
-                        class=""></span>Signup</a>
-            </div>
-        </div>
 
-        <!-- Navbar on small screens (remove the onclick attribute if you want the navbar to always show on top of the content when clicking on the links) -->
-        <div id="navDemo" class="w3-bar-block w3-black w3-hide w3-hide-large w3-hide-medium w3-top"
-            style="margin-top:46px">
-            <a href="#about" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">ABOUT</a>
+    <!-- Navbar (sit on top) -->
+    <div class="w3-top ">
+        <div class="w3-bar w3-white w3-card" id="myNavbar">
             
-            <a href="#testimony" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">TESTIMONY</a>
-            <a href="#contact" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">CONTACT</a>
-            <a href="/login" class="btn btn-default"><span class=""></span>Login</a>
-            <a href="/signup" class="btn btn-default"><span class="w3-bar-item w3-button w3-padding-large"></span>Signup</a>
+            <a href="/login" class="w3-bar-item w3-button w3-wide">LOGIN</a>
+            <a href="/signup" class="w3-bar-item w3-button w3-wide"><span class="fa fa-user"></span>SIGNUP</a>
+            <!-- Right-sided navbar links -->
+            <div class="w3-right w3-hide-small">
+                <a href="#team" class="w3-bar-item w3-button"><i class="fa fa-user"></i> MISSION STATEMENT</a>
+                <a href="#home" class="w3-bar-item w3-button ">TOP-OF PAGE</a>
+                <a href="#about" class="w3-bar-item w3-button">ABOUT</a>
+
+
+                <a href="#contact" class="w3-bar-item w3-button"><i class="fa fa-envelope"></i> CONTACT</a>
+            </div>
+            <!-- Hide right-floated links on small screens and replace them with a menu icon -->
+
+            <a href="javascript:void(0)" class="w3-bar-item w3-button w3-right w3-hide-large w3-hide-medium"
+                onclick="w3_open()">
+                <i class="fa fa-bars"></i>
+            </a>
         </div>
     </div>
-    <section id="home">
-        <div class="hero">
-            <div class="hero-text">
 
-                <div> <h1 class=" w3-padding-large w3-text-black w3-text-bolder ">Need to Vent </h1> <h1>but You feel like nobody understand </h1>
-                    <span class="  w3-text-red w3-text-bolder "> <br> <h5 class="w3-text-black   w3-xxxlarge w3-text-bolder "> YOU ARE NOT ALONE,</h5><br>
-                        <a href="/signup" class="btn btn-default w3-bar-item w3-button w3-padding-large w3-hide-small w3-text-red w3-xxlarge">
-                            <span class="fa fa-user"> </span> Signup</a>
-                    </span>
-                    
+    <!-- Sidebar on small screens when clicking the menu icon -->
+    <nav class="w3-sidebar w3-bar-block w3-black w3-card w3-animate-left w3-hide-medium w3-hide-large"
+        style="display:none" id="mySidebar">
+        <a href="javascript:void(0)" onclick="w3_close()" class="w3-bar-item w3-button w3-large w3-padding-16">Close
+            ×</a>
+        <a href="#team" class="w3-bar-item w3-button"><i class="fa fa-user"></i> MISSION STATEMENT</a>
+        <a href="#about" onclick="w3_close()" class="w3-bar-item w3-button">ABOUT</a>
+        <a href="#contact" onclick="w3_close()" class="w3-bar-item w3-button">CONTACT</a>
+        <a href="/signup" class="w3-bar-item w3-button w3-wide">SIGN-UP</a>
+        <a href="/login" class="w3-bar-item w3-button w3-wide">LOGIN</a>
+    </nav>
 
-                </div>
-
-
-
-            </div>
-
-        </div>
-    </section>
-    <main>
-        <div class="about" id="about">
-            <div>
-                <h2 class="title w3-text-red">
-                    Understand Our Mission
-                </h2>
-                <div class="about-main">
-                    <div>
-
-                    </div>
-                    <div class="about-text">
-                        <h3> Mental Health Is Real </h3>
-                        <h6>Talking About it is SCARY</h6>
-                        <p class="about-text-p">Our mission is to create a safe place for you to vent ANONYMOUSLY without feeling judged and under pressure. This world
-                        has become overwhelming and scary. Knowing that you are not the only one to feel how you felt and finding there is a
-                        community that can assist you through the process is relieving. </p>
-                        <div style="margin-top:10px">
-                            <span class="w3-text-white social">
-                                
-                                </div>
-                            </span>
-                        </div>
-
-                    </div>
-
-                </div>
-            </div>
-
-        </div>
-
-
-
-        <div class="testimony" id="testimony">
+    <!-- Header with full-height image -->
+    <header class="bgimg-1 w3-display-container " id="home">
+        <div class="w3-display-left " style="padding:48px;    margin-top: 222px;">
+            <span class="w3-xlarge w3-white w3-text-orange">Need to Vent but You feel like nobody understand,</span><br>
+           
+            <span class="w3-jumbo w3-hide-small w3-white">You Are Not Alone</span>
+            <!-- <span class="w3-xlarge w3-white w3-text-orange">Need to Vent but You feel like nobody understand,</span> -->
             
-
-            <div class="testimony-main">
-                <div class="testimony-image">
-                    <img src="img/YourStory.png" alt="Karsten Winegeart" />
-                </div>
-                <div class="testimony-text">
-                    <h3>Your story can encourage others to stay alive</h3>
-                    <p style="font-style: italic; color:#282A35;">
-                        "Talking can be a way to cope with a problem you’ve been carrying around in your head for a
-                        while. Just being listened to can help you feel supported and less alone. And it works both
-                        ways. If you open up, it might encourage others to do the same."
-                    </p>
-
-                </div>
+            <span class="w3-xxlarge w3-hide-large w3-hide-medium w3-white">You Are Not Alone</span>
+            
+            <p><a href="#about"
+                    class="w3-button w3-orange w3-padding-large w3-large w3-margin-top w3-opacity w3-hover-opacity-off ">Sign
+                    Up to Vent</a></p>
+        </div>
+        <div class="w3-display-bottomleft w3-text-grey w3-large" style="padding:24px 48px">
+            <i class="fa fa-facebook-official w3-hover-opacity"></i>
+            <i class="fa fa-instagram w3-hover-opacity"></i>
+            <i class="fa fa-snapchat w3-hover-opacity"></i>
+            <i class="fa fa-pinterest-p w3-hover-opacity"></i>
+            <i class="fa fa-twitter w3-hover-opacity"></i>
+            <i class="fa fa-linkedin w3-hover-opacity"></i>
+        </div>
+    </header>
+    <!-- Promo Section - "We know design" -->
+    <div class="w3-container w3-light-grey" style="padding:128px 16px" id="team">
+        <div class="w3-row-padding">
+            <div class="w3-col m6">
+                <h3>Mental Health is real</h3>
+                <h5>Talking About it is scary.</h5>
+                <p>Our mission is to create a safe place for you to vent ANONYMOUSLY without feeling judge and under pressure. This world have became overwhelming and scary. To know that you are not the only one to feel the way you feel , and there is a community that can assist you through the process is amazing and this is what we ARE. Please join and lift the next person up while sorting your own thoughts out.</p>
             </div>
-
-            <div class="testimony-main">
-                <div class="testimony-image">
-                    <img src="img/TakingCharge.png" alt="Hayley Kim Design" />
-                </div>
-                <div class="testimony-text">
-
-                    <h3>Taking charge of your wellbeing</h3>
-                    <p style="font-style: italic; color:#282A35;">
-                        "Feelings do not disappear". Instead of hiding it, facing your feelings head-on by talking about them is one of the most
-                        successful strategies for dealing with whatever is going on for you. As the UK-based Mental Health Foundation writes,
-                        "talking about your feelings isn’t a sign of weakness. It’s part of taking charge of your wellbeing and doing what you
-                        can to stay healthy."
-                    </p>
-                </div>
-            </div>
-
-            <div class="testimony-main">
-                <div class="testimony-image">
-                    <img src="img/TalkingisReleive.png" alt="Scott Webb" />
-                </div>
-                <div class="testimony-text">
-                    <h3>Talking is relieving </h3>
-                    <p style="font-style: italic; color:#282A35;">
-                    "Psychologists at UCLA have proven what we've suspected all along, that talking about feelings
-                    is relieving. Through brain imaging studies, the researchers found that the mere act of putting feelings into words
-                    reduced brain activity in the amygdala, one of the primary areas of the brain associated with processing emotional
-                    responses, meaning that the intensity of emotion decreases."
-                    </p>
-
-
-                </div>
+            <div class="w3-col m6">
+                <img class="w3-image w3-round-large" src="img/background2.jpeg" alt="computer" width="700"
+                    height="394">
             </div>
         </div>
+    </div>
 
 
-
-
-
-        <div class="contact-address " id="contact">
-            <h3 class="title"> GET IN TOUCH. </h3>
-            <div class="contact-address-list">
-                <div class="contact-list">
-                    <h4>location</h4>
-                    <p> Philadelphia, PA 19026</p>
-
-                </div>
-                <div class="contact-list">
-                    <h4>Customer Service Hours</h4>
-                    <p>Monday- Saturday: 8am -9:30pm</p>
-                    <p>Sunday:8am- 9pm</p>
-
-                </div>
-                <div class="contact-list">
-                    <h4>Share how the app made you feel </h4>
-                    <p> <i class="fa fa-phone " style="margin-right: 8px;font-size: 20px;"></i>
-                        nafeesah.q.shah@gmail.com</p>
-                    <p><i class="fa fa-envelope "
-                            style=" margin-right: 5px;font-size: 20px;"></i>https://www.linkedin.com/in/nafeesah-shah/
-                    </p>
-
-                </div>
-
-            </div>
-
-
-
-
-    </main>
-    <!-- <div class="w3-padding w3-center" style="background: #FFF4A3;padding: 10px 0px !important; color:#282A35; ">
-        <div style="display: flex; justify-content: center;align-items: center; flex-wrap: wrap;">
-            <p style="margin: 10px !important ">This website was made with w3schools Spaces. Make your own free website
-                today</p>
-            <button class="w3-margin-top w3-btn w3-text-white  w3-round-xxlarge"
-                style=" background-color:#282A35;padding: 8px 25px;  margin:0px  !important">Start now</button>
+    <!-- Promo Section "Statistics" -->
+    <!-- <div class="w3-container w3-row w3-center w3-dark-grey w3-padding-64">
+        <div class="w3-quarter">
+            <span class="w3-xxlarge">14+</span>
+            <br>Partners
         </div>
-
+        <div class="w3-quarter">
+            <span class="w3-xxlarge">55+</span>
+            <br>Projects Done
+        </div>
+        <div class="w3-quarter">
+            <span class="w3-xxlarge">89+</span>
+            <br>Happy Clients
+        </div>
+        <div class="w3-quarter">
+            <span class="w3-xxlarge">150+</span>
+            <br>Meetings
+        </div>
     </div> -->
+
+
+    <!-- About Section -->
+    <div class="w3-container" style="padding:128px 16px" id="about">
+        <h3 class="w3-center">ABOUT THE COMPANY</h3>
+        <p class="w3-center w3-large">Key features of our company</p>
+        <div class="w3-row-padding w3-center" style="margin-top:64px">
+            <div class="w3-third">
+            
+                <img src="img/YourStory.png" style="height:300px" alt="Karsten Winegeart" />
+            
+                <p class="w3-large">Your story can encourage others to stay alive</p>
+                <p>"Talking can be a way to cope with a problem you’ve been carrying around in your head for a
+                while. Just being listened to can help you feel supported and less alone. And it works both
+                ways. If you open up, it might encourage others to do the same."</p>
+            </div>
+            <div class="w3-third">
+               
+                    <img src="img/TakingCharge.png" style="height:300px" alt="Hayley Kim Design" />
+               
+                <p class="w3-large">Venting is taking charge of your wellbeing</p>
+                <p class="">"Feelings don't disappear. Instead, facing them head-on by talking about them is one of the most successful strategies for dealing with whatever's going on for you. Like the UK-based Mental Health Foundation writes, "talking about your feelings isn’t a sign of weakness. It’s part of taking charge of your wellbeing and doing what you can to stay healthy."</p>
+            </div>
+            <div class="w3-third">
+              
+                <img src="img/TalkingisReleive.png" style="height:300px"alt="Scott Webb" />
+                
+                <p class="w3-large">Talking releive stress and depression</p>
+                <p>"Psychologists at UCLA have proven what we've suspected all along, that talking about feelings
+                is relieving. Through brain imaging studies, the researchers found that the mere act of putting
+                feelings into words reduced brain activity in the amygdala, one of the primary areas of the
+                brain associated with processing emotional responses, meaning that the intensity of an emotion
+                decreases."</p>
+            </div>
+            <!-- <div class="w3-quarter">
+                <i class="fa fa-cog w3-margin-bottom w3-jumbo"></i>
+                <p class="w3-large">Support</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+                    et dolore.</p>
+            </div> -->
+        </div>
+    </div>
+
+
+    <!-- Contact Section -->
+    <div class="w3-container w3-light-grey" style="padding:128px 16px" id="contact">
+        <h3 class="w3-center">CONTACT</h3>
+        <p class="w3-center w3-large">Lets get in touch. Send us a message:</p>
+        <div style="margin-top:48px">
+            <p><i class="fa fa-map-marker fa-fw w3-xxlarge w3-margin-right"></i> Philadelphia,PA/, US</p>
+            <p><i class="fa fa-envelope fa-fw w3-xxlarge w3-margin-right"> </i> Email: nafeesah.q.shah@g@mail.com</p>
+            <br>
+            <!-- <form action="/action_page.php" target="_blank">
+                <p><input class="w3-input w3-border" type="text" placeholder="Name" required name="Name"></p>
+                <p><input class="w3-input w3-border" type="text" placeholder="Email" required name="Email"></p>
+                <p><input class="w3-input w3-border" type="text" placeholder="Subject" required name="Subject"></p>
+                <p><input class="w3-input w3-border" type="text" placeholder="Message" required name="Message"></p>
+                <p>
+                    <button class="w3-button w3-black" type="submit">
+                        <i class="fa fa-paper-plane"></i> SEND MESSAGE
+                    </button>
+                </p>
+            </form> -->
+            <!-- Image of location/map
+            <img src="/w3images/map.jpg" class="w3-image w3-greyscale" style="width:100%;margin-top:48px">
+        </div> -->
+        </div>
+        <div class="contact-list">
+            <h4>Customer Service Hours</h4>
+            <p>Monday- Saturday: 8am -9:30pm</p>
+            <p>Sunday:8am- 9pm</p>
+        
+        </div>
+        <div class="contact-list">
+            <h4>Share how the app made you feel </h4>
+            <p> <i class="fa fa-phone " style="margin-right: 8px;font-size: 20px;"></i>
+                nafeesah.q.shah@gmail.com</p>
+            <p><i class="fa fa-envelope "
+                    style=" margin-right: 5px;font-size: 20px;"></i>https://www.linkedin.com/in/nafeesah-shah/
+            </p>
+        
+        </div>
+
+        
+    </div> 
+
+    <!-- Footer -->
+    <footer class="w3-center w3-orange w3-padding-64">
+        <a href="#home" class="w3-button w3-light-grey"><i class="fa fa-arrow-up w3-margin-right"></i>To the top</a>
+       
+       
+    </footer>
+
     <script>
-        function myFunction() {
-            var x = document.getElementById("navDemo");
-            if (x.className.indexOf("w3-show") == -1) {
-                x.className += " w3-show";
+        // Modal Image Gallery
+        function onClick(element) {
+            document.getElementById("img01").src = element.src;
+            document.getElementById("modal01").style.display = "block";
+            var captionText = document.getElementById("caption");
+            captionText.innerHTML = element.alt;
+        }
+
+
+        // Toggle between showing and hiding the sidebar when clicking the menu icon
+        var mySidebar = document.getElementById("mySidebar");
+
+        function w3_open() {
+            if (mySidebar.style.display === 'block') {
+                mySidebar.style.display = 'none';
             } else {
-                x.className = x.className.replace(" w3-show", "");
+                mySidebar.style.display = 'block';
             }
         }
+
+        // Close the sidebar with the close button
+        function w3_close() {
+            mySidebar.style.display = "none";
+        }
     </script>
+
 </body>
 
 </html>

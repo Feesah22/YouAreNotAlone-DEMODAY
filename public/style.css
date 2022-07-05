@@ -1,7 +1,7 @@
 body{
-  padding-top:10px;
+  padding-top:5px;
   word-wrap:break-word;
-  background-color: rgb(234, 194, 137);
+  background-color: rgb(255 255 255 / 15%);
 }
 
 .loginBody{
@@ -512,7 +512,28 @@ h4 {
   }
 }
 
+
+
 /* ---------------feed and profile css -----------------------*/
+
+.navbar{
+  background-color: lightgrey;
+  width: 100%;
+  font-size: 15px;
+  color: black;
+  height: 59px;
+  border: 2px solid whitesmoke;
+      box-shadow: 0 2px 5px 0 rgb(0 0 0 / 16%),
+      0 2px 10px 0 rgb(0 0 0 / 12%);
+      }
+  
+
+
+.navbar a {
+  color: black;
+  float: right;
+  padding: 16px;
+}
 
 ul {
   display:flex;
@@ -531,7 +552,7 @@ ul {
 }
 
 .feelingImg{
-  width:25em;
+  width:75%;
   height:150px;
   border-radius: 75%;
   
